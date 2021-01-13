@@ -1,0 +1,11 @@
+<div class="form-signin">
+  <img class="mb-4" [src] ="detalles.images.lg" alt="" width="300" height="420">
+  <h4>Estadísticas de: {{detalles.name}} </h4>
+  <h4 class="h4 mb-3 font-weight-normal">Inteligencia: {{detalles.powerstats.intelligence}}</h4>
+  <h4 class="h4 mb-3 font-weight-normal">Fuerza: {{detalles.powerstats.strength}}</h4>
+  <h4 class="h4 mb-3 font-weight-normal">Rapidéz: {{detalles.powerstats.speed}}</h4>
+  <h4 class="h4 mb-3 font-weight-normal">Durabilidad:{{detalles.powerstats.durability}}</h4>
+  <h4 class="h4 mb-3 font-weight-normal">Poder: {{detalles.powerstats.power}}</h4>
+  <h4 class="h4 mb-3 font-weight-normal">Combate: {{detalles.powerstats.combat}}</h4>
+  <button class="btn btn-lg btn-primary btn-block" [routerLink]= "['/heroes']" type="submit">Regresar</button>
+</div>
