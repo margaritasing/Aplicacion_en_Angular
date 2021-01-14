@@ -14,18 +14,18 @@
 
 <section class="jumbotron text-center">
   <div class="container form-inline">
-    <h1>Album de Heroes</h1>
+    <h1>{{' de Heroes' | titulo | titlecase}}</h1>
     <p class="lead text-muted"></p>
     <hr>
     <p>
-      <select class="form-group mx-sm-3" >
+      <select class="form-group mx-sm-3"  [(ngModel)] = "buscarporNombre">
         <option value="">Mostrar por Nombre</option>
-        <option value="{{ heroe.name }}" *ngFor= "let heroe of hs.heroes" >{{heroe.name}}</option>
+        <option value="{{ heroe.name }}" *ngFor= "let heroe of hs.heroes | ordenarNombre | quirepnombre" >{{heroe.name}}</option>
 
       </select>
-      <select class="form-group mx-sm-3" >
+      <select class="form-group mx-sm-3" [(ngModel)] = "buscarporApariencia" >
         <option value="">Mostrar por Apariencia</option>
-        <option value="{{ Apariencia.biography.alignment}} " *ngFor="let Apariencia of hs.heroes">{{Apariencia.biography.alignment}} </option>
+        <option value="{{ Apariencia.biography.alignment }}" *ngFor="let Apariencia of hs.heroes | ordenarApariencia | quirepapa ">{{Apariencia.biography.alignment}} </option>
 
       </select>
     </p>
@@ -35,7 +35,7 @@
 <div class="album py-5 bg-light">
   <div class="container">
     <div class="row">
-      <div class="card mb-3 espacio" style="max-width: 540px;" *ngFor= "let informacion of hs.heroes">
+      <div class="card mb-3 espacio" style="max-width: 540px;" *ngFor= "let informacion of hs.heroes | buscarnombre:buscarporNombre | buscarApariencia:buscarporApariencia  | ordenarNombre">
         <div class="row no-gutters">
           <div class="col-md-4">
             <img [src]="informacion.images.md" class="card-img" alt="...">

@@ -8,6 +8,9 @@ import { HeroesService } from 'src/app/services/heroes.service';
 })
 export class HeroesComponent implements OnInit {
 
+  buscarporNombre = '';
+  buscarporApariencia = '';
+
   constructor( public hs: HeroesService) {
     console.log("Hola mundo");
   }
